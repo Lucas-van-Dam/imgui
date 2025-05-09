@@ -507,7 +507,7 @@ void ImGui_ImplGlfw_MonitorCallback(GLFWmonitor*, int)
 }
 
 #ifdef EMSCRIPTEN_USE_EMBEDDED_GLFW3
-static EM_BOOL ImGui_ImplEmscripten_WheelCallback(int, const EmscriptenWheelEvent* ev, void*)
+static EMbool ImGui_ImplEmscripten_WheelCallback(int, const EmscriptenWheelEvent* ev, void*)
 {
     // Mimic Emscripten_HandleWheel() in SDL.
     // Corresponding equivalent in GLFW JS emulation layer has incorrect quantizing preventing small values. See #6096
@@ -978,7 +978,7 @@ void ImGui_ImplGlfw_Sleep(int milliseconds)
 }
 
 #ifdef EMSCRIPTEN_USE_EMBEDDED_GLFW3
-static EM_BOOL ImGui_ImplGlfw_OnCanvasSizeChange(int event_type, const EmscriptenUiEvent* event, void* user_data)
+static EMbool ImGui_ImplGlfw_OnCanvasSizeChange(int event_type, const EmscriptenUiEvent* event, void* user_data)
 {
     ImGui_ImplGlfw_Data* bd = (ImGui_ImplGlfw_Data*)user_data;
     double canvas_width, canvas_height;
@@ -987,7 +987,7 @@ static EM_BOOL ImGui_ImplGlfw_OnCanvasSizeChange(int event_type, const Emscripte
     return true;
 }
 
-static EM_BOOL ImGui_ImplEmscripten_FullscreenChangeCallback(int event_type, const EmscriptenFullscreenChangeEvent* event, void* user_data)
+static EMbool ImGui_ImplEmscripten_FullscreenChangeCallback(int event_type, const EmscriptenFullscreenChangeEvent* event, void* user_data)
 {
     ImGui_ImplGlfw_Data* bd = (ImGui_ImplGlfw_Data*)user_data;
     double canvas_width, canvas_height;
